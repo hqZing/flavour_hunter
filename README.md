@@ -5,10 +5,15 @@
 关于仓库的目录
 
 flavour_hunter
+
 ├─analyze     *数据分析模块*
+
 ├─backend    *后端模块*
+
 ├─docs      *用来储存一些md格式的文档*
+
 ├─frontend *前端模块*
+
 └─spider *爬虫模块*
 
 ## 1. 备赛要点
