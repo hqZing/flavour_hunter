@@ -192,4 +192,4 @@ vim ~/.bashrc
 5. [轻松部署ambari2.7](https://www.bilibili.com/video/av30362634)
 6. [如何优雅地使用Apache Ambari安装HDFS、HBase等分布式应用](https://www.jianshu.com/p/af50f3e8b8b2)
 7. [hive到hbase的使用](https://www.cnblogs.com/dongdone/p/5681295.html)
-8. [对几个微信公众号2018年到现在所发表爬虫文章的简单整理](https://hqzing.github.io/2019/02/10/%E5%AF%B9%E5%87%A0%E4%B8%AA%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B72018%E5%B9%B4%E5%88%B0%E7%8E%B0%E5%9C%A8%E6%89%80%E5%8F%91%E8%A1%A8%E7%88%AC%E8%99%AB%E6%96%87%E7%AB%A0%E7%9A%84%E7%AE%80%E5%8D%95%E6%95%B4%E7%90%86/)
+8. [对几个微信公众号2018年到现在所发表爬虫文章的简单整理](https://hqzing.github.io/2019/02/10/0002/)
