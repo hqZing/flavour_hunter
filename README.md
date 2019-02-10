@@ -86,7 +86,7 @@
 
 版本：Ubuntu 16.04 Desktop
 
-下载链接：http://pan.baidu.com/
+下载链接：[百度网盘（还没有上传）](http://pan.baidu.com)
 
 虚拟机软件：VMware Workstation 12.0 or later
 
