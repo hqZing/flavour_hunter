@@ -16,6 +16,12 @@ flavour_hunter
 
 └─spider *爬虫模块*
 
+队伍成员自己整理的一些文档（写成markdown上传博客或github，用来替代QQ群传word交流的形式）：
+0. 各成员的详细学习资料整理，传送门在下面的分工表格中（目前踩完了李鑫宇那部分的坑）
+1. [对几个微信公众号2018年到现在所发表爬虫文章的简单整理](https://hqzing.github.io/2019/02/10/0002/)
+2. [安装thrift并使用python3驱动Hbase](https://hqzing.github.io/2019/02/11/3/)
+
+
 ## 1. 备赛要点
 
 **主要的评分项在这里，根据得分点来设计作品**
@@ -121,7 +127,7 @@ flavour_hunter
 | mysql | 5.7.25 | apt默认安装位置 |
 | python | 2.7/3.5 | 系统默认安装位置 | 这个是系统自带的，需要其他的话可以自己下载源码自己编译安装，安装的时候--prefix指定文件夹。
 | pycharm | 2018.3.4 | /home/hadoop/Desktop/pycharm-community-2018.3.4 | 环境变量已经配好，在任意目录执行pycharm.sh就可以启动了
-
+s
 #### 5.2.3 开机自启动项
 
 目前已经添加了一些开机自启动的命令，方便开机直接启动
@@ -157,7 +163,7 @@ vim ~/.bashrc
 | 登陆密码 | DHv2535fg | NT4bDKPVg |
 | 学生机拥有者 | 黄琦 | 严东阳 |
 
-## 6. 真·参考资料
+## 6. 网上可用的参考资料
 
 1. [发现杯官方，赛事说明会的回放链接 ](http://www.tmooc.cn/course/100054.shtml)
 2. 在github上面搜索“发现杯”，可以搜到一些去年的作品，有几个把截图和演示视频都放进去了。有空的时候可以去看看
@@ -166,4 +172,4 @@ vim ~/.bashrc
 5. [轻松部署ambari2.7](https://www.bilibili.com/video/av30362634)
 6. [如何优雅地使用Apache Ambari安装HDFS、HBase等分布式应用](https://www.jianshu.com/p/af50f3e8b8b2)
 7. [hive到hbase的使用](https://www.cnblogs.com/dongdone/p/5681295.html)
-8. [对几个微信公众号2018年到现在所发表爬虫文章的简单整理](https://hqzing.github.io/2019/02/10/0002/)
+
