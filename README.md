@@ -123,11 +123,11 @@ flavour_hunter
 | --------- | ----- | --------- | ---- |
 | hadoop | 2.7.7 | /usr/local/hadoop/ | 伪分布式模式 |
 | Hbase | 2.0.4 | /usr/local/hbase/ | 所有配置遵从依赖软件hadoop |
-| Hive | 3.1.1 |  /usr/local/hbase/ | 
+| Hive | 3.1.1 |  /usr/local/hive/ | 
 | thrift | 0.12.0 | /usr/local/thrift | 
 | mysql | 5.7.25 | apt默认安装位置 |
-| python | 2.7/3.5 | 系统默认安装位置 | 这个是系统自带的，需要其他的话可以自己下载源码自己编译安装，安装的时候--prefix指定文件夹。
-| pycharm | 2018.3.4 | /home/hadoop/Desktop/pycharm-community-2018.3.4 | 环境变量已经配好，在任意目录执行pycharm.sh就可以启动了
+| python | 2.7/3.5 | 系统默认安装位置 | 系统自带的完全够用了 |
+| pycharm | 2018.3.4 | /home/hadoop/pycharm-community-2018.3.4 | 添加了启动脚本，在任意目录执行charm就可以启动了
 s
 #### 5.2.3 开机自启动项
 
@@ -136,21 +136,25 @@ s
 
 #### 5.2.4 已经配置的环境变量
 
-可以打开bashrc查看
+
+因为配置了环境变量，所以运行以下脚本的时候可以不加入路径
+
+| 功能 | 命令 |
+| ---- | ---- |
+| 开启hadoop | start-all.sh |
+| 开启hadoop中的HDFS | start-dfs.sh |
+| 开启Hbase | start-hbase.sh |
+| 开启hiveserver2 | hiveserver2 |
+| 开启Hive | hive |
+| 进入Hbase shell | hbase shell |
+| 开启Hbase的thrift服务 | hbase-daemon.sh start thrift |
+
+篇幅有限，只描述了常用的脚本，详细信息可以打开bashrc查看
 
 ```
 vim ~/.bashrc
 ```
 
-因为配置了环境变量，所以运行以下脚本的时候可以不加入路径
-
-开启hadoop：start-all.sh
-
-开启hadoop中的HDFS：start-dfs.sh
-
-开启Hbase：start-hbase.sh
-
-开启Hive：hive
 
 ### 5.3 云服务器
 
