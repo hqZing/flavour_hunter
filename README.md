@@ -117,6 +117,7 @@ flavour_hunter
 | hadoop | 2.7.7 | /usr/local/hadoop/ | 伪分布式模式 |
 | Hbase | 2.0.4 | /usr/local/hbase/ | 所有配置遵从依赖软件hadoop |
 | Hive | 3.1.1 |  /usr/local/hbase/ | 
+| thrift | 0.12.0 | /usr/local/thrift | 
 | mysql | 5.7.25 | apt默认安装位置 |
 | python | 2.7/3.5 | 系统默认安装位置 | 这个是系统自带的，需要其他的话可以自己下载源码自己编译安装，安装的时候--prefix指定文件夹。
 | pycharm | 2018.3.4 | /home/hadoop/Desktop/pycharm-community-2018.3.4 | 环境变量已经配好，在任意目录执行pycharm.sh就可以启动了
