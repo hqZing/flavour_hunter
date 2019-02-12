@@ -22,6 +22,7 @@ flavour_hunter
 1. [对几个微信公众号2018年到现在所发表爬虫文章的简单整理](https://hqzing.github.io/2019/02/10/0002/)
 2. [安装thrift并使用python3驱动Hbase](https://hqzing.github.io/2019/02/11/3/)
 3. [使用python3通过pyhive操作Hive](https://hqzing.github.io/2019/02/11/4/)
+4. [Hive与Hbase整合，共享表和数据](https://hqzing.github.io/2019/02/12/5/)
 
 ## 1. 备赛要点
 
