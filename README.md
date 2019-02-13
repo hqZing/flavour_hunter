@@ -19,10 +19,12 @@ flavour_hunter
 队伍成员自己整理的一些文档（写成markdown上传博客或github，用来替代QQ群传word交流的形式）：
 
 0. 各成员的详细学习资料整理，传送门在下面的分工表格中（目前踩完了17级两个人的坑）
-1. [对几个微信公众号2018年到现在所发表爬虫文章的简单整理](https://hqzing.github.io/2019/02/10/0002/)
-2. [安装thrift并使用python3驱动Hbase](https://hqzing.github.io/2019/02/11/3/)
-3. [使用python3通过pyhive操作Hive](https://hqzing.github.io/2019/02/11/4/)
-4. [Hive与Hbase整合，共享表和数据](https://hqzing.github.io/2019/02/12/5/)
+1. [黄琦：对几个微信公众号2018年到现在所发表爬虫文章的简单整理](https://hqzing.github.io/2019/02/10/0002/)
+2. [黄琦：安装thrift并使用python3驱动Hbase](https://hqzing.github.io/2019/02/11/3/)
+3. [黄琦：使用python3通过pyhive操作Hive](https://hqzing.github.io/2019/02/11/4/)
+4. [黄琦：Hive与Hbase整合，共享表和数据](https://hqzing.github.io/2019/02/12/5/)
+5. [李思佳：参考资源与可爬取网站整合（各种链接](https://github.com/hqZing/flavour_hunter/blob/master/docs/%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90%E4%B8%8E%E5%8F%AF%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88%EF%BC%88%E5%90%84%E7%A7%8D%E9%93%BE%E6%8E%A5%EF%BC%89.md)
+6. [李思佳：项目策划电影篇](https://github.com/hqZing/flavour_hunter/blob/master/docs/%E9%A1%B9%E7%9B%AE%E7%AD%96%E5%88%92%E7%94%B5%E5%BD%B1%E7%AF%87.md)
 
 ## 1. 备赛要点
 
@@ -79,8 +81,8 @@ flavour_hunter
 | 人员 | 详情 | 学习资料 |
 | ---- | ---- | ---------- |
 | 李鑫宇 |  1. 学习Hbase的基本用法，不需要学习太深，够用就行，看一天左右就行了。<br>2. 学会用python驱动Hbase，对其进行增删改查操作（主要是插入操作）<br> 3. 编写爬虫，按需求将爬取到的信息存到Hbase中<br> 4. 爬虫要爬好几个网站，工作量较大，暂时不分配过多任务  |  [学习资料](https://github.com/hqZing/flavour_hunter/blob/master/docs/lxy_help.md) |
-| 孙志远 | 1. 学习Hive的基本用法。<br>2. 学习用python驱动Hive和mysql。<br>3. 从严东阳那里得到一个python程序，程序会向Hbase中写入一些表和数据，在严东阳的帮助下构建Hbase和Hive的表映射，尝试从Hive中读取到python程序写进去的那批数据<br>4. 根据大家讨论得出的要求，将所需要统计的内容通过HiveSQL语句查询出来，存入mysql中，供web后端程序使用。<br>5. 注意，虚拟机中已经安装了mysql，其中一些表是用来存储Hive的配置数据的（也称为元数据），不用管那些表，就只管创建自己的新表去存储统计得出的数据就行了 |   [学习资料](https://github.com/hqZing/flavour_hunter/blob/master/docs/szy_help.md) |
-| 严东阳 | 1. 爬虫的目标网站较多，一个人不够应付，在有必要的时候，去帮忙写一些爬虫代码。<br>2. 按照编程的实际情况，在16三个人中讨论爬虫的需求和分析的需求变更（有些网站实在搞不下来的，必须改变策略），将我们的目标第一时间向学弟说明清楚。<br>3. 学习Hadoop、Hbase、Hive的安装配置，掌握“hive --auxpath”这个参数的用法（网上大部分都是用这个方案进行映射），学会构建Hbase到Hive的表映射，并指导学弟完成这个内容。<br>4. 因为爬虫并不能第一时间写完，所以需要你按照我们的爬虫需求，构造一些假数据用来给后面的数据分析环节做编程测试。也就是写一个python程序，程序功能是向Hbase的表中插入一些自己编的数据（字段要对应上） | 无  |
+| 孙志远 | 1. 学习Hive的基本用法。<br>2. 学习用python驱动Hive和mysql。<br>3. 根据大家讨论得出的要求，将所需要统计的内容通过HiveSQL语句查询出来，存入mysql中，供web后端程序使用。<br>4. 注意，虚拟机中已经安装了mysql，其中一些表是用来存储Hive的配置数据的（也称为元数据），不用管那些表，就只管创建自己的新表去存储统计得出的数据就行了 |   [学习资料](https://github.com/hqZing/flavour_hunter/blob/master/docs/szy_help.md) |
+| 严东阳 | 1. 爬虫的目标网站较多，一个人不够应付，在有必要的时候，去帮忙写一些爬虫代码。 | 无  |
 | 李思佳 | 后端工作较为简单，不会占用太多时间。主要和黄琦一起商量前端的美化和项目的优化，以及上面提到的设计与完善工作，这部分工作占了项目的半边天，想办法在这些方面提高项目竞争力  | 无  |
 | 黄琦 | 研究使用ambari在云服务器上建立内网集群 ，沟通各种大小事情，解决各种疑难杂症，处理上面的设计与完善工作。并在开发环境上面提前进行踩坑 | 无 |
 
