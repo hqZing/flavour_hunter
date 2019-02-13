@@ -108,7 +108,9 @@ flavour_hunter
 为了统一所有人的开发工具，方便后期集成和部署，我配好了一个ubuntu虚拟机，所有人使用这套环境进行开发。
 
 [本项目虚拟机使用指南](https://github.com/hqZing/flavour_hunter/blob/master/docs/本项目虚拟机使用指南.md)
+
 [我自己录的视频说明](https://pan.baidu.com/s/1Ztu33-pdEF1fallVwCGJzg) 提取码：mc2i 
+
 [虚拟机下载地址](https://pan.baidu.com/s/1iJp9mqMd6dls_QfFYMTjJA) 提取码：4mx8 
 
 ### 5.3 云服务器
