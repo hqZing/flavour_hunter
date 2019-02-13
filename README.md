@@ -25,6 +25,7 @@ flavour_hunter
 4. [黄琦：Hive与Hbase整合，共享表和数据](https://hqzing.github.io/2019/02/12/5/)
 5. [李思佳：参考资源与可爬取网站整合（各种链接](https://github.com/hqZing/flavour_hunter/blob/master/docs/%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90%E4%B8%8E%E5%8F%AF%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E6%95%B4%E5%90%88%EF%BC%88%E5%90%84%E7%A7%8D%E9%93%BE%E6%8E%A5%EF%BC%89.md)
 6. [李思佳：项目策划电影篇](https://github.com/hqZing/flavour_hunter/blob/master/docs/%E9%A1%B9%E7%9B%AE%E7%AD%96%E5%88%92%E7%94%B5%E5%BD%B1%E7%AF%87.md)
+7. [黄琦：本项目虚拟机使用指南](https://github.com/hqZing/flavour_hunter/blob/master/docs/本项目虚拟机使用指南.md)
 
 ## 1. 备赛要点
 
@@ -106,62 +107,13 @@ flavour_hunter
 
 为了统一所有人的开发工具，方便后期集成和部署，我配好了一个ubuntu虚拟机，所有人使用这套环境进行开发。
 
-在虚拟机里面的IDE直接操作hadoop的这些衍生产品，调试很方便
-#### 5.2.1 虚拟机信息
-
-用户名：hadoop
-
-密码：123456
-
-版本：Ubuntu 16.04 Desktop
-
-下载链接：[百度网盘（还没有上传）](http://pan.baidu.com)
-
-虚拟机软件：VMware Workstation 12.0 or later
-
-虚拟机里面vm-tools已经装好，可以复制粘贴
-
-#### 5.2.2 虚拟机开发环境
-| 开发环境 | 版本 | 安装位置 | 备注 |
-| --------- | ----- | --------- | ---- |
-| hadoop | 2.7.7 | /usr/local/hadoop/ | 伪分布式模式 |
-| Hbase | 2.0.4 | /usr/local/hbase/ | 所有配置遵从依赖软件hadoop |
-| Hive | 3.1.1 |  /usr/local/hive/ | 
-| thrift | 0.12.0 | /usr/local/thrift | 
-| mysql | 5.7.25 | apt默认安装位置 |
-| python | 2.7/3.5 | 系统默认安装位置 | 系统自带的完全够用了 |
-| pycharm | 2018.3.4 | /home/hadoop/pycharm-community-2018.3.4 | 添加了启动脚本，在任意目录执行charm就可以启动了
-s
-#### 5.2.3 开机自启动项
-
-目前已经添加了一些开机自启动的命令，方便开机直接启动
-
-
-#### 5.2.4 已经配置的环境变量
-
-
-因为配置了环境变量，所以运行以下脚本的时候可以不加入路径
-
-| 功能 | 命令 |
-| ---- | ---- |
-| 开启hadoop | start-all.sh |
-| 开启hadoop中的HDFS | start-dfs.sh |
-| 开启Hbase | start-hbase.sh |
-| 开启hiveserver2 | hiveserver2 |
-| 开启Hive | hive |
-| 进入Hbase shell | hbase shell |
-| 开启Hbase的thrift服务 | hbase-daemon.sh start thrift |
-
-篇幅有限，只描述了常用的脚本，详细信息可以打开bashrc查看
-
-```
-vim ~/.bashrc
-```
-
+[本项目虚拟机使用指南](https://github.com/hqZing/flavour_hunter/blob/master/docs/本项目虚拟机使用指南.md)
+[我自己录的视频说明](https://pan.baidu.com/s/1Ztu33-pdEF1fallVwCGJzg) 提取码：mc2i 
+[虚拟机下载地址](https://pan.baidu.com/s/1iJp9mqMd6dls_QfFYMTjJA) 提取码：4mx8 
 
 ### 5.3 云服务器
 
-云服务器集群这部分主要由我一个人搭建，偶尔需要登陆华为云账号的或者接收短信验证码的时候需要打扰各位
+华为云学生机，目前由严东阳搭建
 
 | 主机名 | master.hd | slave1.hd | slave2.hd |
 | ------- | ----------- | ----------- |---------- |
@@ -170,6 +122,8 @@ vim ~/.bashrc
 | 用户名 | root | root | root |
 | 登陆密码 | DHv2535fg | NT4bDKPVg |
 | 学生机拥有者 | 黄琦 | 严东阳 |
+| 控制台账号 | 18677681204 | hahaha1235 |
+| 控制台密码 | xgsn1D++ | NT4bDKPVgHQIxpEK |
 
 ## 6. 网上可用的参考资料
 
@@ -179,5 +133,5 @@ vim ~/.bashrc
 4. [与厦大这门课程配套的学习指南和各种软件的安装、使用教程。](http://dblab.xmu.edu.cn/blog/)虽然教程有点旧，但依旧可以正常使用，照着打代码打命令就可以了。
 5. [轻松部署ambari2.7](https://www.bilibili.com/video/av30362634)
 6. [如何优雅地使用Apache Ambari安装HDFS、HBase等分布式应用](https://www.jianshu.com/p/af50f3e8b8b2)
-7. [hive到hbase的使用](https://www.cnblogs.com/dongdone/p/5681295.html)
+
 
