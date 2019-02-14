@@ -111,9 +111,9 @@ flavour_hunter
 
 [我自己录的视频说明](https://pan.baidu.com/s/1Ztu33-pdEF1fallVwCGJzg) 提取码：mc2i 
 
-[虚拟机下载地址](https://pan.baidu.com/s/15Wt_StsE8SEb3ZhqvN1K7w) 提取码：d3i5 
+[虚拟机下载地址（第二个压缩包也有问题，先不要下载）](https://pan.baidu.com/)
 
-昨天晚上上传的镜像有点问题，打开之后会回到三天前的版本。今天（2月14号）中午重新上传了一遍虚拟机，压缩包名称为vm1.zip，这个才是正确的压缩包。第一次开机的时候选择“我已移动该虚拟机”。如果开机之后发现虚拟机无法上网，那就重启一遍再继续用就行了。
+
 
 ### 5.3 云服务器
 
