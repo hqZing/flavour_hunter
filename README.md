@@ -111,8 +111,9 @@ flavour_hunter
 
 [我自己录的视频说明](https://pan.baidu.com/s/1Ztu33-pdEF1fallVwCGJzg) 提取码：mc2i 
 
-[虚拟机下载地址（第二个压缩包也有问题，先不要下载）](https://pan.baidu.com/)
+[虚拟机下载地址](https://pan.baidu.com/s/1Jrvg4-z7IwoKZnD_7dKxtA)  提取码：9fu4 
 
+压缩包名称为vm_ubuntu.zip。第一次开机的时候选择“我已复制该虚拟机”。下载之前先把电脑里面的旧版本全部删除吧，不然可能会搞混。
 
 
 ### 5.3 云服务器
