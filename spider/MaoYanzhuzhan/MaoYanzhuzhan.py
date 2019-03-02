@@ -12,13 +12,13 @@ import threading
 import time
 
 
-#此函数用于解决猫眼字体反爬问题，传入soup和selector，利用beautifulsoup抓取并返回网页所需要的数字
-def get_data(soup,selector):
+# 此函数用于解决猫眼字体反爬问题，传入soup和selector，利用beautifulsoup抓取并返回网页所需要的数字
+def get_data(soup, selector):
     titles = soup.select(selector)
     wotfs = soup.select('head > style')
 
     wotflist = str(wotfs[0]).split('\n')
-    maoyanwotf = wotflist[5].replace(' ','').replace('url(\'//','').replace('format(\'woff\');','').replace('\')','')
+    maoyanwotf = wotflist[5].replace(' ', '').replace('url(\'//', '').replace('format(\'woff\');', '').replace('\')',   '')
 
     r = requests.get('http://'+maoyanwotf)
     with open("demo.woff", "wb") as code:
@@ -27,7 +27,7 @@ def get_data(soup,selector):
     font.saveXML('to.xml')
 
     # 加载字体模板
-    num = [8,6,2,1,4,3,0,9,5,7]
+    num = [8, 6, 2, 1, 4, 3, 0, 9, 5, 7]
     data = []
     new_font = []
     xmlfilepath_temp = os.path.abspath("temp.xml")
@@ -39,7 +39,7 @@ def get_data(soup,selector):
         find_list = rereobj.findall(str(subElementObj[i].toprettyxml()))
         data.append(str(subElementObj[i].toprettyxml()).replace(find_list[0],'').replace("\n",''))
 
-    #根据字体模板解码本次请求下载的字体
+    # 根据字体模板解码本次请求下载的字体
     xmlfilepath_find = os.path.abspath("to.xml")
     domobj_find = xmldom.parse(xmlfilepath_find)
     elementobj_find = domobj_find.documentElement
@@ -73,19 +73,21 @@ def get_data(soup,selector):
     return data
 
 def parse_one_page(soup,html):
-    result = []
+    result = {}
     try:
         #片名
         item1 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > h3')
-        result.append(item1[0].string)
-    except IndexError:
+        # result.append(item1[0].string)
+        result["n"] = item1[0].string
+        print(item1[0].string)
+    except:
         result.append(None)
 
     try:    
         #导演
         item2 = soup.select('.info .name')
-        result.append(item2[0].string.replace("\n","").replace(" ",""))
-    except IndexError:
+        result.append(item2[0].string.replace("\n", "").replace(" ", ""))
+    except:
         result.append(None)
 
     try:
@@ -95,35 +97,35 @@ def parse_one_page(soup,html):
         result.append(item2[2].string.replace("\n","").replace(" ",""))
         result.append(item2[3].string.replace("\n","").replace(" ",""))
         result.append(item2[4].string.replace("\n","").replace(" ",""))
-    except IndexError:
+    except:
         result.append(None)
 
     try:
         #类别
         item3 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > ul > li:nth-child(1)')
         result.append(item3[0].string.replace("\n","").replace(" ",""))
-    except Exception:
+    except:
         result.append(None)
 
     try:
         #地区/时长
         item4 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > ul > li:nth-child(2)')
         result.append(item4[0].string.replace("\n","").replace(" ",""))
-    except IndexError:
+    except:
         result.append(None)
 
     try:
         #上映时间
         item5 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > ul > li:nth-child(3)')
         result.append(item5[0].string.replace("\n","").replace(" ",""))
-    except IndexError:
+    except:
         result.append(None)
 
     try:
         #评分
         item6 = get_data(soup,'body > div.banner > div > div.celeInfo-right.clearfix > div.movie-stats-container > div:nth-child(1) > div > span > span')
         result.append(item6)
-    except IndexError:
+    except:
         result.append(None)
 
     try:
@@ -132,7 +134,7 @@ def parse_one_page(soup,html):
         if operator.eq('万', "".join(re.findall(r'[\u4e00-\u9fa5]+',str(soup.select('.stonefont')),re.S))):
             item7 = float(item7)*10000
         result.append(item7)
-    except IndexError:
+    except:
         result.append(None)
 
     try:
@@ -148,14 +150,14 @@ def parse_one_page(soup,html):
             item8 = float(item8)*600000000
         result.append(item8)
         
-    except IndexError:
+    except:
         result.append(None)
 
     try:
         #剧情简介
         item9 = soup.select('#app > div > div.main-content > div > div.tab-content-container > div.tab-desc.tab-content.active > div:nth-child(1) > div.mod-content > span')
         result.append(item9[0].string.replace("\n","").replace(" ",""))
-    except IndexError:
+    except:
         result.append(None)
 
     try:
@@ -167,7 +169,7 @@ def parse_one_page(soup,html):
         result.append(item10[3].string)
         result.append(item10[4].string)
         result.append(item10[5].string)
-    except IndexError:
+    except:
         result.append(None)
 
 #     try:
@@ -183,7 +185,7 @@ def parse_one_page(soup,html):
         #短评
         item12 = soup.select('.comment-content')
         result.append(" ".join('%s' %id for id in item12).replace(" ","").replace('<divclass="comment-content">',"").replace('</div>',""))
-    except IndexError:
+    except:
         result.append(None)
     return result
 
@@ -200,11 +202,12 @@ def main(offset):
     }
 
     db_data = requests.get(url, headers=header)
-    soup = BeautifulSoup(db_data.text.replace("&#x",""), 'lxml')
+    soup = BeautifulSoup(db_data.text.replace("&#x", ""), 'lxml')
     html = etree.HTML(db_data.text)
-    result = parse_one_page(soup,html)
+    result = parse_one_page(soup, html)
     print(result)
-    
+
+
 if __name__=='__main__':
-    for line in open("idtest.txt"):
-        main(line.replace("\n",""))
+    for line in open("2016id.txt"):
+        main(line.replace("\n", ""))
