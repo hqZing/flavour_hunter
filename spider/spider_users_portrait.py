@@ -163,7 +163,10 @@ def do_spider(film_id):
     html = get_one_page(url)
     result = parse_one_page(html)
     if result  != None:
-        write_to_hbase(result)
+        try:
+            write_to_hbase(result)
+        except:
+            pass
 
 
 def start():
