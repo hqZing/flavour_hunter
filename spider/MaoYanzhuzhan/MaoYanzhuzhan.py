@@ -66,7 +66,7 @@ def get_data(soup, selector):
         k = k+1
         getthis = i.upper()
         for j in range(len(font_list)):
-            if operator.eq(getthis.replace(".",""),font_list[j].replace("uni","")):
+            if operator.eq(getthis.replace(".", ""),font_list[j].replace("uni", "")):
                 data = data + str(new_font[j])
         if operator.eq(k,((re.findall(re.compile(r">(.*)<"), str(titles[0]))[0].find('.'))/5)):
              data = data + '.'
@@ -75,52 +75,172 @@ def get_data(soup, selector):
 def parse_one_page(soup,html):
     result = {}
     try:
-        #片名
+        # 片名
         item1 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > h3')
         # result.append(item1[0].string)
         result["n"] = item1[0].string
         print(item1[0].string)
     except:
-        result.append(None)
+        return None
 
     try:    
-        #导演
+        # 导演
         item2 = soup.select('.info .name')
-        result.append(item2[0].string.replace("\n", "").replace(" ", ""))
+        # result.append(item2[0].string.replace("\n", "").replace(" ", ""))
+        result["dr"] = item2[0].string.replace("\n", "").replace(" ", "")
     except:
-        result.append(None)
+        return None
 
     try:
-        #主演
+        # 主演
         item2 = soup.select('.info .name')
-        result.append(item2[1].string.replace("\n","").replace(" ",""))
-        result.append(item2[2].string.replace("\n","").replace(" ",""))
-        result.append(item2[3].string.replace("\n","").replace(" ",""))
-        result.append(item2[4].string.replace("\n","").replace(" ",""))
+        # result.append(item2[1].string.replace("\n","").replace(" ",""))
+        # result.append(item2[2].string.replace("\n","").replace(" ",""))
+        # result.append(item2[3].string.replace("\n","").replace(" ",""))
+        # result.append(item2[4].string.replace("\n","").replace(" ",""))
+        result["a1"] = item2[1].string.replace("\n", "").replace(" ", "")
+        result["a2"] = item2[2].string.replace("\n", "").replace(" ", "")
+        result["a3"] = item2[3].string.replace("\n", "").replace(" ", "")
+        result["a4"] = item2[4].string.replace("\n", "").replace(" ", "")
     except:
-        result.append(None)
+        return None
 
     try:
         #类别
         item3 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > ul > li:nth-child(1)')
-        result.append(item3[0].string.replace("\n","").replace(" ",""))
+        # result.append(item3[0].string.replace("\n","").replace(" ",""))
+        dict_temp = {
+            "爱情": "t_aq",
+            "喜剧": "t_xj",
+            "动画": "t_dh",
+            "剧情": "t_jq",
+            "恐怖": "t_kb",
+            "惊悚": "t_js",
+            "科幻": "t_kh",
+            "动作": "t_dz",
+            "悬疑": "t_xy",
+            "犯罪": "t_fz",
+            "冒险": "t_mx",
+            "战争": "t_zz",
+            "奇幻": "t_qh",
+            "运动": "t_yd",
+            "家庭": "t_jt",
+            "古装": "t_gz",
+            "武侠": "t_wx",
+            "西部": "t_xb",
+            "历史": "t_ls",
+            "传记": "t_zj",
+            "歌舞": "t_gw",
+            "黑色电影": "t_hs",
+            "短片": "t_dp",
+            "纪录片": "t_jl",
+            "其他": "t_qt",
+        }
+        dict_temp2 = {
+            "t_aq": 0,
+            "t_xj": 0,
+            "t_dh": 0,
+            "t_jq": 0,
+            "t_kb": 0,
+            "t_js": 0,
+            "t_kh": 0,
+            "t_dz": 0,
+            "t_xy": 0,
+            "t_fz": 0,
+            "t_mx": 0,
+            "t_zz": 0,
+            "t_qh": 0,
+            "t_yd": 0,
+            "t_jt": 0,
+            "t_gz": 0,
+            "t_wx": 0,
+            "t_xb": 0,
+            "t_ls": 0,
+            "t_zj": 0,
+            "t_gw": 0,
+            "t_hs": 0,
+            "t_dp": 0,
+            "t_jl": 0,
+            "t_qt": 0
+        }
+        cls = item3[0].string.replace("\n", "").replace(" ", "").split(",")
+        # print(cls)
+        for c in cls:
+            dict_temp2[dict_temp[c]] = 1
+        result.update(dict_temp2)
     except:
-        result.append(None)
+        return None
+
+
 
     try:
         #地区/时长
         item4 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > ul > li:nth-child(2)')
-        result.append(item4[0].string.replace("\n","").replace(" ",""))
-    except:
-        result.append(None)
+        # result.append()
+        dict_temp = {
+            "大陆": "c_dl",
+            "美国": "c_mg",
+            "韩国": "c_hg",
+            "日本": "c_rb",
+            "香港": "c_xg",
+            "台湾": "c_tw",
+            "泰国": "c_tg",
+            "印度": "c_yd",
+            "法国": "c_fg",
+            "英国": "c_yg",
+            "俄罗斯": "c_els",
+            "意大利": "c_ydl",
+            "西班牙": "c_xby",
+            "德国": "c_dg",
+            "波兰": "c_bl",
+            "澳大利亚": "c_ad",
+            "伊朗": "c_yl",
+            "其他": "c_qt"
+        }
+        dict_temp2 = {
+            "c_dl": 0,
+            "c_mg": 0,
+            "c_hg": 0,
+            "c_rb": 0,
+            "c_xg": 0,
+            "c_tw": 0,
+            "c_tg": 0,
+            "c_yd": 0,
+            "c_fg": 0,
+            "c_yg": 0,
+            "c_els": 0,
+            "c_ydl": 0,
+            "c_xby": 0,
+            "c_dg": 0,
+            "c_bl": 0,
+            "c_ad": 0,
+            "c_yl": 0,
+            "c_qt": 0,
+        }
+
+        country_and_len = item4[0].string.replace("\n", "").replace(" ", "")
+        print(country_and_len)
+
+        # 国家地区列表
+        countrys = country_and_len.split("/")[0].split(",")
+        for e in countrys:
+            dict_temp2[dict_temp[e]] = 1
+        result.update(dict_temp2)
+
+        # 电影时长
+        result["len"] = country_and_len.split("/")[1].replace("分钟", "")
+    except :
+        return None
 
     try:
         #上映时间
         item5 = soup.select('body > div.banner > div > div.celeInfo-right.clearfix > div.movie-brief-container > ul > li:nth-child(3)')
-        result.append(item5[0].string.replace("\n","").replace(" ",""))
+        result["da"] = item5[0].string.replace("\n", "").replace(" ", "")[:10]
     except:
-        result.append(None)
+        return None
 
+    return result
+'''
     try:
         #评分
         item6 = get_data(soup,'body > div.banner > div > div.celeInfo-right.clearfix > div.movie-stats-container > div:nth-child(1) > div > span > span')
@@ -187,7 +307,9 @@ def parse_one_page(soup,html):
         result.append(" ".join('%s' %id for id in item12).replace(" ","").replace('<divclass="comment-content">',"").replace('</div>',""))
     except:
         result.append(None)
-    return result
+        
+'''
+
 
 def main(offset):    
     url = 'https://maoyan.com/films/'+offset
@@ -204,6 +326,7 @@ def main(offset):
     db_data = requests.get(url, headers=header)
     soup = BeautifulSoup(db_data.text.replace("&#x", ""), 'lxml')
     html = etree.HTML(db_data.text)
+    # print(db_data.text)
     result = parse_one_page(soup, html)
     print(result)
 
