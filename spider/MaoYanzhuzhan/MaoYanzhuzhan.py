@@ -239,15 +239,16 @@ def parse_one_page(soup,html):
     except:
         return None
 
-    return result
-'''
+
     try:
         #评分
         item6 = get_data(soup,'body > div.banner > div > div.celeInfo-right.clearfix > div.movie-stats-container > div:nth-child(1) > div > span > span')
         result.append(item6)
     except:
         result.append(None)
+        return result
 
+'''
     try:
         #评分人数
         item7 = get_data(soup,'body > div.banner > div > div.celeInfo-right.clearfix > div.movie-stats-container > div:nth-child(1) > div > div > span > span')
