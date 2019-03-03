@@ -16,7 +16,9 @@ from hbase import Hbase
 
 
 def to_md5(arg_str):
-    return hashlib.md5().update(bytes(arg_str, encoding='utf-8')).hexdigest()
+    hs = hashlib.md5()
+    hs.update(bytes(arg_str, encoding='utf-8'))
+    return hs.hexdigest()
 
 
 def to_byte(num):
@@ -446,7 +448,8 @@ def start():
 
 if __name__ == '__main__':
 
-    socket = TSocket.TSocket('192.168.200.16', 9090)
+    socket = TSocket.TSocket('192.168.1.103', 9090)
+    # socket = TSocket.TSocket('127.0.0.1', 9090)
     socket.setTimeout(5000)
     transport = TTransport.TBufferedTransport(socket)
     protocol = TBinaryProtocol.TBinaryProtocol(transport)
