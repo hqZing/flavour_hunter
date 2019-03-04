@@ -13,7 +13,8 @@ from hbase.ttypes import Mutation
 from thrift.transport import TSocket, TTransport
 from thrift.protocol import TBinaryProtocol
 from hbase import Hbase
-
+from redis import Redis
+import time
 
 def to_md5(arg_str):
     hs = hashlib.md5()
@@ -434,9 +435,22 @@ def write_to_hbase(result):
 
 # 程序的主要入口
 def start():
-    for line in open("2016id.txt"):
-        dict_users_portrait = get_users_portrait(line.replace("\n", ""))
-        dict_film_info = get_film_info(line.replace("\n", ""))
+
+    # 从redis中领取爬虫任务
+    while 1:
+
+        # 每隔一秒就尝试领取一次任务
+        time.sleep(1)
+
+        # 如果任务列表为空,就放弃领取
+        f_id = redis.spop("film_id")
+        if f_id is None:
+            continue
+        print("领取到一个任务")
+
+        # 领取到任务,拿去处理
+        dict_users_portrait = get_users_portrait(f_id)
+        dict_film_info = get_film_info(f_id)
 
         # 如果这部电影在用户画像站和猫眼主站都有信息，那么就算是完美的数据了，可以直接存数据库拿去分析
         if (dict_users_portrait is not None) and (dict_film_info is not None):
@@ -448,13 +462,18 @@ def start():
 
 if __name__ == '__main__':
 
-    socket = TSocket.TSocket('192.168.1.103', 9090)
+    # 部署环境下使用这个参数
     # socket = TSocket.TSocket('127.0.0.1', 9090)
+
+    socket = TSocket.TSocket('192.168.1.103', 9090)
     socket.setTimeout(5000)
     transport = TTransport.TBufferedTransport(socket)
     protocol = TBinaryProtocol.TBinaryProtocol(transport)
     client = Hbase.Client(protocol)
     socket.open()
+
+    # 连接redis
+    redis = Redis.from_url("redis://:1234@120.24.1.93:7003", decode_responses=True)
 
     # 程序入口
     start()

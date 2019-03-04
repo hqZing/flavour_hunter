@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05a28c87-49b5-483e-8feb-39c067300da8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/demo.woff" afterPath="$PROJECT_DIR$/spider/demo.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/spider/filmcodes.py" afterPath="$PROJECT_DIR$/spider/get_film_id.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/spider/spider.py" afterPath="$PROJECT_DIR$/spider/get_all_info.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/spider.py" afterPath="$PROJECT_DIR$/spider/spider.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/to.xml" afterPath="$PROJECT_DIR$/spider/to.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,45 +15,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="element.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/bs4/element.py">
+      <file leaf-file-name="get_film_id.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spider/get_film_id.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31625">
-              <caret line="1377" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1621" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
               <folding>
-                <marker date="1551546209486" expanded="true" signature="0:41" ph="..." />
-                <marker date="1551546209486" expanded="true" signature="56980:59246" ph="..." />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="生成建表语句.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyze/生成建表语句.py">
+      <file leaf-file-name="get_all_info.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spider/get_all_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="80" lean-forward="false" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spider.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spider/spider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="450" column="51" lean-forward="true" selection-start-line="450" selection-start-column="51" selection-end-line="450" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyze/readme.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="464">
+              <caret line="464" column="17" lean-forward="true" selection-start-line="464" selection-start-column="17" selection-end-line="464" selection-end-column="17" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,14 +58,17 @@
         <option value="$PROJECT_DIR$/spider/MaoYanzhuzhan/MaoYanzhuzhan.py" />
         <option value="$PROJECT_DIR$/analyze/生成建表语句.py" />
         <option value="$PROJECT_DIR$/spider/spider.py" />
+        <option value="$PROJECT_DIR$/spider/ctest.py" />
+        <option value="$PROJECT_DIR$/spider/get_film_id.py" />
+        <option value="$PROJECT_DIR$/spider/get_all_info.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="39" />
-    <option name="y" value="118" />
-    <option name="width" value="1592" />
-    <option name="height" value="1218" />
+    <option name="x" value="19" />
+    <option name="y" value="228" />
+    <option name="width" value="1442" />
+    <option name="height" value="956" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -103,6 +86,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,7 +108,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -143,7 +126,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.spider">
+  <component name="RunManager" selected="Python.get_all_info">
     <configuration name="生成建表语句" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -161,19 +144,53 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="MaoYanzhuzhan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="ctest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider/MaoYanzhuzhan" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="flavour_hunter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/MaoYanzhuzhan/MaoYanzhuzhan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/ctest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="get_all_info" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flavour_hunter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/get_all_info.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="get_film_id" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flavour_hunter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/get_film_id.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,45 +207,33 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="flavour_hunter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/spider.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\huangqi\Desktop\赛事\发现杯\flavour_hunter\spider\get_all_info.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="spider_users_portrait" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="flavour_hunter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/spider_users_portrait.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python.spider_users_portrait" />
-      <item index="1" class="java.lang.String" itemvalue="Python.MaoYanzhuzhan" />
-      <item index="2" class="java.lang.String" itemvalue="Python.生成建表语句" />
-      <item index="3" class="java.lang.String" itemvalue="Python.spider" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.生成建表语句" />
+      <item index="1" class="java.lang.String" itemvalue="Python.spider" />
+      <item index="2" class="java.lang.String" itemvalue="Python.get_film_id" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ctest" />
+      <item index="4" class="java.lang.String" itemvalue="Python.get_all_info" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.spider" />
-        <item index="1" class="java.lang.String" itemvalue="Python.生成建表语句" />
-        <item index="2" class="java.lang.String" itemvalue="Python.MaoYanzhuzhan" />
-        <item index="3" class="java.lang.String" itemvalue="Python.spider_users_portrait" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.get_all_info" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ctest" />
+        <item index="2" class="java.lang.String" itemvalue="Python.get_film_id" />
+        <item index="3" class="java.lang.String" itemvalue="Python.spider" />
+        <item index="4" class="java.lang.String" itemvalue="Python.生成建表语句" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -241,18 +246,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21030043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21246007" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20840065" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38041002" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -271,6 +277,43 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/bs4/element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31671">
+          <caret line="1377" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1621" selection-end-column="0" />
+          <folding>
+            <marker date="1551546209486" expanded="true" signature="0:41" ph="..." />
+            <marker date="1551546209486" expanded="true" signature="56980:59246" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/生成建表语句.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="80" lean-forward="false" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/get_all_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10051">
+          <caret line="450" column="51" lean-forward="true" selection-start-line="450" selection-start-column="51" selection-end-line="450" selection-end-column="51" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/bs4/element.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31671">
@@ -480,6 +523,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/redis/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1235">
+          <caret line="347" column="6" lean-forward="false" selection-start-line="347" selection-start-column="6" selection-end-line="347" selection-end-column="6" />
+          <folding>
+            <marker date="1551689658285" expanded="false" signature="0:23" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/analyze/生成建表语句.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -488,11 +541,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/spider.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/rediscluster/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="450" column="51" lean-forward="true" selection-start-line="450" selection-start-column="51" selection-end-line="450" selection-end-column="51" />
+        <state relative-caret-position="-177">
+          <caret line="131" column="45" lean-forward="false" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/redis/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="628" column="0" lean-forward="false" selection-start-line="628" selection-start-column="0" selection-end-line="628" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/rediscluster/nodemanager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/ctest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/get_film_id.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/get_all_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="464" column="17" lean-forward="true" selection-start-line="464" selection-start-column="17" selection-end-line="464" selection-end-column="17" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
