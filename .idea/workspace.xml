@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05a28c87-49b5-483e-8feb-39c067300da8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spider/spider_vis_backend.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/demo.woff" afterPath="$PROJECT_DIR$/spider/demo.woff" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/spider_visual/index.html" afterPath="$PROJECT_DIR$/frontend/spider_visual/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/get_all_info.py" afterPath="$PROJECT_DIR$/spider/get_all_info.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/get_film_id.py" afterPath="$PROJECT_DIR$/spider/get_film_id.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider/to.xml" afterPath="$PROJECT_DIR$/spider/to.xml" />
@@ -20,8 +22,8 @@
       <file leaf-file-name="get_film_id.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/get_film_id.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state relative-caret-position="332">
+              <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -39,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider_vis_backend.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spider/spider_vis_backend.py">
+      <file leaf-file-name="vis_server.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spider/vis_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="263">
+              <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -54,8 +56,8 @@
       <file leaf-file-name="get_all_info.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/get_all_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1898">
-              <caret line="497" column="0" lean-forward="true" selection-start-line="497" selection-start-column="0" selection-end-line="497" selection-end-column="0" />
+            <state relative-caret-position="337">
+              <caret line="463" column="0" lean-forward="false" selection-start-line="463" selection-start-column="0" selection-end-line="466" selection-end-column="12" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -84,17 +86,18 @@
         <option value="$PROJECT_DIR$/spider/spider.py" />
         <option value="$PROJECT_DIR$/spider/ctest.py" />
         <option value="$PROJECT_DIR$/backend/spider_vis_backend.py" />
-        <option value="$PROJECT_DIR$/spider/get_film_id.py" />
         <option value="$PROJECT_DIR$/spider/spider_vis_backend.py" />
+        <option value="$PROJECT_DIR$/spider/get_film_id.py" />
         <option value="$PROJECT_DIR$/spider/get_all_info.py" />
+        <option value="$PROJECT_DIR$/spider/vis_server.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="373" />
-    <option name="y" value="171" />
-    <option name="width" value="1776" />
-    <option name="height" value="1119" />
+    <option name="x" value="854" />
+    <option name="y" value="219" />
+    <option name="width" value="1482" />
+    <option name="height" value="1060" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -111,6 +114,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,8 +142,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,24 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.get_all_info">
-    <configuration name="ctest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="flavour_hunter" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/ctest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.vis_server">
     <configuration name="get_all_info" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -214,7 +200,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="spider_vis_backend (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -226,7 +212,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="flavour_hunter" />
-      <option name="SCRIPT_NAME" value="C:\Users\huangqi\Desktop\赛事\发现杯\flavour_hunter\spider\get_all_info.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/spider_vis_backend.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -248,20 +234,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="vis_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/spider" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flavour_hunter" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider/vis_server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.spider" />
-      <item index="1" class="java.lang.String" itemvalue="Python.get_film_id" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ctest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.get_all_info" />
-      <item index="4" class="java.lang.String" itemvalue="Python.spider_vis_backend" />
+      <item index="0" class="java.lang.String" itemvalue="Python.get_film_id" />
+      <item index="1" class="java.lang.String" itemvalue="Python.get_all_info" />
+      <item index="2" class="java.lang.String" itemvalue="Python.spider_vis_backend" />
+      <item index="3" class="java.lang.String" itemvalue="Python.spider_vis_backend (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.vis_server" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.get_all_info" />
+        <item index="0" class="java.lang.String" itemvalue="Python.vis_server" />
         <item index="1" class="java.lang.String" itemvalue="Python.get_film_id" />
-        <item index="2" class="java.lang.String" itemvalue="Python.spider_vis_backend" />
-        <item index="3" class="java.lang.String" itemvalue="Python.ctest" />
-        <item index="4" class="java.lang.String" itemvalue="Python.spider" />
+        <item index="2" class="java.lang.String" itemvalue="Python.spider_vis_backend (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.get_all_info" />
+        <item index="4" class="java.lang.String" itemvalue="Python.spider_vis_backend" />
       </list>
     </recent_temporary>
   </component>
@@ -282,13 +285,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="373" y="171" width="1776" height="1119" extended-state="0" />
-    <editor active="true" />
+    <frame x="854" y="219" width="1482" height="1060" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19565217" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24005681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26343518" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2797753" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -313,16 +315,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spider/spider_vis_backend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider/get_film_id.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -602,10 +594,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spider/spider_vis_backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="45" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider/get_film_id.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state relative-caret-position="332">
+          <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -614,18 +614,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spider/get_all_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1898">
-          <caret line="497" column="0" lean-forward="true" selection-start-line="497" selection-start-column="0" selection-end-line="497" selection-end-column="0" />
+        <state relative-caret-position="337">
+          <caret line="463" column="0" lean-forward="false" selection-start-line="463" selection-start-column="0" selection-end-line="466" selection-end-column="12" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/spider_vis_backend.py">
+    <entry file="file://$PROJECT_DIR$/spider/vis_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="263">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

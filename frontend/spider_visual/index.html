@@ -123,9 +123,7 @@
                 <div class="panel-heading">
                     爬虫从机slave1的输出
                 </div>
-                <div class="panel-body pb_slave" id="sl1">
-                    1001<br>1002
-                </div>
+                <div class="panel-body pb_slave" id="s1"></div>
             </div>
         </div>
 
@@ -133,14 +131,9 @@
         <div class="div_master">
             <div class="panel panel-default c1">
                 <div class="panel-heading">
-                    爬虫主机master上的redis任务集合
+                    爬虫主机master上的redis任务集合（电影id）
                 </div>
-                <!-- <div class="c2"> -->
-                    <div class="panel-body pb_master">
-                        1001<br>1002888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>
-                    </div>
-                <!-- </div> -->
-
+                <div class="panel-body pb_master" id="ms"></div>
             </div>
             
             <!-- 开始和停止按钮 -->
@@ -157,9 +150,7 @@
                 <div class="panel-heading"> 
                     爬虫从机slave2的输出
                 </div>
-                <div class="panel-body pb_slave">
-                    88<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>
-                </div>
+                <div class="panel-body pb_slave" id="s2"></div>
             </div>
         </div>
 
@@ -169,16 +160,69 @@
                 <div class="panel-heading">
                     最终写入数据库的数据 
                 </div>
-                <div class="panel-body pb_bottom">
-                    888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>
-                </div>
+                <div class="panel-body pb_bottom" id="res"></div>
             </div>
         </div>
-
     </div>
+
     <script>
-        $("#sl1").append("<p class='c_green'>aaa</p>")
-        $("#sl1").append("<p>bbb</p>")
+        // $("#sl1").append("<p class='c_green'>aaa</p>")
+        // $("#sl1").append("<p>bbb</p>")
+        
+        function update_ms(){
+            $.get("http://127.0.0.1:32222/ms", function(data){
+                console.log(data);
+                if (data == "None"){
+                    return;
+                }
+                apd_html = "<p>"+ data + "</p>"
+                $("#ms").append(apd_html)
+            });
+            
+        }
+
+        function update_s1(){
+            $.get("http://127.0.0.1:32222/s1", function(data){
+                console.log(data);
+                if (data == "None"){
+                    return;
+                }
+                apd_html = "<p>"+ data + "</p>"
+                $("#s1").append(apd_html)
+            });
+            
+        }
+
+        function update_s2(){
+            $.get("http://127.0.0.1:32222/s2", function(data){
+                console.log(data);
+                if (data == "None"){
+                    return;
+                }
+                apd_html = "<p>"+ data + "</p>"
+                $("#s2").append(apd_html)
+            });
+            
+        }
+
+        function update_res(){
+            $.get("http://127.0.0.1:32222/res", function(data){
+                console.log(data);
+                if (data == "None"){
+                    return;
+                }
+                apd_html = "<p>"+ data + "</p>"
+                $("#res").append(apd_html)
+            });
+            
+        }
+        //重复刷新
+        setInterval(update_ms, 100);
+        setInterval(update_s1, 100);
+        setInterval(update_s2, 100);
+        setInterval(update_res, 100);
+
+
     </script>
 </body>
 </html>

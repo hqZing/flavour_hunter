@@ -37,6 +37,7 @@ def get_film_id():
                 redis.lpush("ms", f_id)
 
                 print(f_id)
+                time.sleep(0.1)
 
     print("所有任务添加完成")
 

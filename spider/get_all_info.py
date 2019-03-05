@@ -437,7 +437,7 @@ def write_to_hbase(result, client):
 
 
 # 程序的主要入口
-def start():
+def start(node_name):
 
 
     client = None
@@ -458,7 +458,7 @@ def start():
 
     # 在不同服务器运行的时候更改一下这个节点名字，用来区分不同的爬虫从机
     # 从机1设置为s1，从机2设置为s2
-    node_name = "s1"
+    # node_name = "s1"
 
     # 依旧要先清空redis的队列
     while redis.lpop(node_name) is not None:
@@ -474,14 +474,15 @@ def start():
         f_id = redis.lpop("film_id")
         if f_id is None:
             continue
-        print("领取到一个任务")
+        print(node_name, "领取到一个任务")
 
         # 若领取了任务，则更新到爬虫页中
-        redis.lpush(node_name, f_id)
+        redis.lpush(node_name, node_name + " 领取到一个任务： " + f_id)
 
         # 领取到任务,拿去处理
         dict_users_portrait = get_users_portrait(f_id)
         dict_film_info = get_film_info(f_id)
+        time.sleep(0.1)
 
         # 如果这部电影在用户画像站和猫眼主站都有信息，那么就算是完美的数据了，可以直接存数据库拿去分析
         if (dict_users_portrait is not None) and (dict_film_info is not None):
@@ -498,6 +499,5 @@ def start():
 
 if __name__ == '__main__':
 
-
     # 程序入口
-    start()
+    start("s1")
