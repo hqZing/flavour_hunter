@@ -16,6 +16,11 @@ from hbase import Hbase
 from redis import Redis
 import time
 
+# 注意，在不同的场合下运行，有2处地方需要修改参数，第一处是节点名字，第二处是Hbase的ip
+
+
+
+
 def to_md5(arg_str):
     hs = hashlib.md5()
     hs.update(bytes(arg_str, encoding='utf-8'))
@@ -416,9 +421,7 @@ def get_film_info(film_id):
 
 
 # 录入数据库
-def write_to_hbase(result):
-    global socket
-    global client
+def write_to_hbase(result, client):
 
     # 将这大量字段添加进去
     mutations = [Mutation(column=("f:"+x).encode('utf-8'), value=to_byte(result[x])) for x in result.keys()]
@@ -436,17 +439,45 @@ def write_to_hbase(result):
 # 程序的主要入口
 def start():
 
+
+    client = None
+
+    # socket = TSocket.TSocket('192.168.1.103', 9090)
+
+    # 部署环境下使用这个参数
+    # socket = TSocket.TSocket('127.0.0.1', 9090)
+
+    # socket.setTimeout(5000)
+    # transport = TTransport.TBufferedTransport(socket)
+    # protocol = TBinaryProtocol.TBinaryProtocol(transport)
+    # client = Hbase.Client(protocol)
+    # socket.open()
+
+    # 连接redis
+    redis = Redis.from_url("redis://:fxb_fh@120.24.1.93:6379", decode_responses=True)
+
+    # 在不同服务器运行的时候更改一下这个节点名字，用来区分不同的爬虫从机
+    # 从机1设置为s1，从机2设置为s2
+    node_name = "s1"
+
+    # 依旧要先清空redis的队列
+    while redis.lpop(node_name) is not None:
+        pass
+    while redis.lpop("res") is not None:
+        pass
+
     # 从redis中领取爬虫任务
     while 1:
 
-        # 每隔一秒就尝试领取一次任务
-        time.sleep(1)
-
         # 如果任务列表为空,就放弃领取
-        f_id = redis.spop("film_id")
+
+        f_id = redis.lpop("film_id")
         if f_id is None:
             continue
         print("领取到一个任务")
+
+        # 若领取了任务，则更新到爬虫页中
+        redis.lpush(node_name, f_id)
 
         # 领取到任务,拿去处理
         dict_users_portrait = get_users_portrait(f_id)
@@ -457,23 +488,16 @@ def start():
             result = {}
             result.update(dict_users_portrait)
             result.update(dict_film_info)
-            write_to_hbase(result)
+            # write_to_hbase(result, client)
+            print(result)
+            redis.lpush(node_name, "经过清洗判断，数据合格，录入Hbase中")
+            redis.lpush("res", str(dict_film_info))
+        else:
+            redis.lpush(node_name, "经过清洗判断，数据不合格，放弃录入")
 
 
 if __name__ == '__main__':
 
-    # 部署环境下使用这个参数
-    # socket = TSocket.TSocket('127.0.0.1', 9090)
-
-    socket = TSocket.TSocket('192.168.1.103', 9090)
-    socket.setTimeout(5000)
-    transport = TTransport.TBufferedTransport(socket)
-    protocol = TBinaryProtocol.TBinaryProtocol(transport)
-    client = Hbase.Client(protocol)
-    socket.open()
-
-    # 连接redis
-    redis = Redis.from_url("redis://:1234@120.24.1.93:7003", decode_responses=True)
 
     # 程序入口
     start()

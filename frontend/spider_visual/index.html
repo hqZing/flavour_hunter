@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>爬虫可视化输出</title>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="./js/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <style>
+        
+        html,body{height:100% ;margin:0}
+
+        #main_cont{
+            /* background-color: aquamarine; */
+            width: 100%;
+            /* height: 800px; */
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .div_slave{
+            width: 34%;
+            height: 60%;
+            /* background-color: bisque; */
+            float: left;
+        }
+        .div_master{
+            width: 32%;
+            height: 60%;
+            float: left;
+            position: relative;
+            /* overflow-y:auto; */
+
+        }
+        .div_bottom{
+            width: 100%;
+            height: 25%;
+            /* background-color: rgb(247, 167, 240); */
+            margin-top: 10px;
+            float: left;
+
+        }
+        .full_height{
+            height: 100%;
+        }
+        .c1{
+            height: 85%;
+        }
+        .pb_master{
+            overflow-y:auto;
+            height: 85%;
+        }
+        .pb_bottom{
+            overflow-x:auto;
+            overflow-y:auto;
+            height: 70%;
+        }
+        .pb_slave{
+            overflow-y:auto;
+            height: 85%;
+        }
+        .c4{
+            width: 100%;
+            position: absolute;
+            margin: 0 auto;
+            text-align: center
+        }
+        .c_green{
+            color: rgb(114, 167, 114);
+        }
+    </style>
+</head>
+<body>
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">说明</h4>
+                </div>
+                <div class="modal-body">在开发阶段已经将程序中指定的所有电影信息存入Hbase中了，因为Hbase的特性，在此处运行代码只会导致数据的覆盖写入，不会引起数据的重复和丢失。也就是说在此页面上操作不会对分析结果产生影响，可放心操作。</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 主页面 -->
+    <div id="main_cont">
+
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">分布式爬虫输出</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">爬虫页</a></li>
+                    <li><a href="#">返回数据可视化页面</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">使用说明</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+
+  
+        <!-- 左边，slave1 -->
+        <div class="div_slave">
+            <div class="panel panel-default full_height">
+                <div class="panel-heading">
+                    爬虫从机slave1的输出
+                </div>
+                <div class="panel-body pb_slave" id="sl1">
+                    1001<br>1002
+                </div>
+            </div>
+        </div>
+
+        <!-- 中间，master -->
+        <div class="div_master">
+            <div class="panel panel-default c1">
+                <div class="panel-heading">
+                    爬虫主机master上的redis任务集合
+                </div>
+                <!-- <div class="c2"> -->
+                    <div class="panel-body pb_master">
+                        1001<br>1002888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>
+                    </div>
+                <!-- </div> -->
+
+            </div>
+            
+            <!-- 开始和停止按钮 -->
+            <div class="c4">
+                <button type="button" class="btn btn-default">开始</button>
+                <button type="button" class="btn btn-default">停止</button>
+            </div>
+
+        </div>
+
+        <!-- 右边，slave2 -->
+        <div class="div_slave">
+            <div class="panel panel-default full_height">
+                <div class="panel-heading"> 
+                    爬虫从机slave2的输出
+                </div>
+                <div class="panel-body pb_slave">
+                    88<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部，最终数据 -->
+        <div class="div_bottom">
+            <div class="panel panel-default full_height">
+                <div class="panel-heading">
+                    最终写入数据库的数据 
+                </div>
+                <div class="panel-body pb_bottom">
+                    888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>888<br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $("#sl1").append("<p class='c_green'>aaa</p>")
+        $("#sl1").append("<p>bbb</p>")
+    </script>
+</body>
+</html>
