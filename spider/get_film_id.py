@@ -6,7 +6,7 @@ from redis import Redis
 # 本代码用于获取猫眼电影的编码，存入redis中作为任务队列
 
 
-def get_film_id():
+def get_film_id(**kwargs):
 
     redis = Redis.from_url("redis://:fxb_fh@120.24.1.93:6379", decode_responses=True)
 
@@ -22,7 +22,6 @@ def get_film_id():
     for year_id in [11, 12, 13, 14, 100]:
         for offset in range(0, 1980, 30):
             url = 'https://maoyan.com/films?showType=3&sortId=1&yearId='+str(year_id)+'&offset='+str(offset)
-            time.sleep(1)
             header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
                                     ' (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36'}
             html = requests.get(url, headers=header)
@@ -37,7 +36,7 @@ def get_film_id():
                 redis.lpush("ms", f_id)
 
                 print(f_id)
-                time.sleep(0.1)
+                time.sleep(2)
 
     print("所有任务添加完成")
 

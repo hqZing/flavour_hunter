@@ -477,7 +477,7 @@ def start(node_name):
         print(node_name, "领取到一个任务")
 
         # 若领取了任务，则更新到爬虫页中
-        redis.lpush(node_name, node_name + " 领取到一个任务： " + f_id)
+        redis.lpush(node_name, node_name + " 领取到一个任务：" + f_id)
 
         # 领取到任务,拿去处理
         dict_users_portrait = get_users_portrait(f_id)
@@ -491,10 +491,10 @@ def start(node_name):
             result.update(dict_film_info)
             # write_to_hbase(result, client)
             print(result)
-            redis.lpush(node_name, "经过清洗判断，数据合格，录入Hbase中")
+            redis.lpush(node_name, "经过清洗判断，%s数据合格，录入Hbase中，电影名为：%s" % (f_id, result["n"]))
             redis.lpush("res", str(dict_film_info))
         else:
-            redis.lpush(node_name, "经过清洗判断，数据不合格，放弃录入")
+            redis.lpush(node_name, "经过清洗判断，%s数据不合格，放弃录入" % f_id)
 
 
 if __name__ == '__main__':

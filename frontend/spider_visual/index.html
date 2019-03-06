@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>爬虫可视化输出</title>
+    <title>分布式爬虫展示</title>
 
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="./js/jquery.min.js"></script>
-
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="./js/bootstrap.min.js"></script>
 
     <style>
@@ -20,42 +15,29 @@
         html,body{height:100% ;margin:0}
 
         #main_cont{
-            /* background-color: aquamarine; */
             width: 100%;
-            /* height: 800px; */
             height: 100%;
-            margin: 0 auto;
-            overflow: hidden;
         }
         .div_slave{
             width: 34%;
             height: 60%;
-            /* background-color: bisque; */
             float: left;
         }
         .div_master{
             width: 32%;
             height: 60%;
             float: left;
-            position: relative;
-            /* overflow-y:auto; */
-
         }
         .div_bottom{
             width: 100%;
             height: 25%;
-            /* background-color: rgb(247, 167, 240); */
             margin-top: 10px;
             float: left;
-
-        }
-        .full_height{
-            height: 100%;
         }
         .c1{
             height: 85%;
         }
-        .pb_master{
+        .pb_mid{
             overflow-y:auto;
             height: 85%;
         }
@@ -64,18 +46,21 @@
             overflow-y:auto;
             height: 70%;
         }
-        .pb_slave{
-            overflow-y:auto;
-            height: 85%;
-        }
         .c4{
             width: 100%;
-            position: absolute;
-            margin: 0 auto;
             text-align: center
         }
-        .c_green{
-            color: rgb(114, 167, 114);
+        .full_height{
+            height: 100%;
+        }
+        .c_blue{
+            color: rgb(63, 185, 201);
+        }
+        .c_pink{
+            color: rgb(221, 125, 240);
+        }
+        .c_default{
+
         }
     </style>
 </head>
@@ -88,7 +73,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title" id="myModalLabel">说明</h4>
                 </div>
-                <div class="modal-body">在开发阶段已经将程序中指定的所有电影信息存入Hbase中了，因为Hbase的特性，在此处运行代码只会导致数据的覆盖写入，不会引起数据的重复和丢失。也就是说在此页面上操作不会对分析结果产生影响，可放心操作。</div>
+                <div class="modal-body">在开发阶段为了</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 </div>
@@ -104,7 +89,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">分布式爬虫输出</a>
+                <a class="navbar-brand" href="#">分布式爬虫展示</a>
             </div>
             <div>
                 <ul class="nav navbar-nav">
@@ -119,12 +104,18 @@
   
         <!-- 左边，slave1 -->
         <div class="div_slave">
-            <div class="panel panel-default full_height">
+            <div class="panel panel-default c1">
                 <div class="panel-heading">
                     爬虫从机slave1的输出
                 </div>
-                <div class="panel-body pb_slave" id="s1"></div>
+                <div class="panel-body pb_mid" id="pb_s1"></div>
             </div>
+
+            <div class="c4">
+                <button type="button" class="btn btn-default" onclick="start_node('s1');">启动</button>
+                <button type="button" class="btn btn-default" onclick="stop_node('s1');">停止</button>
+            </div>
+
         </div>
 
         <!-- 中间，master -->
@@ -133,25 +124,30 @@
                 <div class="panel-heading">
                     爬虫主机master上的redis任务集合（电影id）
                 </div>
-                <div class="panel-body pb_master" id="ms"></div>
+                <div class="panel-body pb_mid" id="pb_ms"></div>
             </div>
             
-            <!-- 开始和停止按钮 -->
             <div class="c4">
-                <button type="button" class="btn btn-default">开始</button>
-                <button type="button" class="btn btn-default">停止</button>
+                <button type="button" class="btn btn-default" onclick="start_node('ms');">启动</button>
+                <button type="button" class="btn btn-default" onclick="stop_node('ms');">停止</button>
             </div>
 
         </div>
 
         <!-- 右边，slave2 -->
         <div class="div_slave">
-            <div class="panel panel-default full_height">
+            <div class="panel panel-default c1">
                 <div class="panel-heading"> 
                     爬虫从机slave2的输出
                 </div>
-                <div class="panel-body pb_slave" id="s2"></div>
+                <div class="panel-body pb_mid" id="pb_s2"></div>
             </div>
+
+            <div class="c4">
+                <button type="button" class="btn btn-default" onclick="start_node('s2');">启动</button>
+                <button type="button" class="btn btn-default" onclick="stop_node('s2');">停止</button>
+            </div>
+
         </div>
 
         <!-- 底部，最终数据 -->
@@ -160,68 +156,124 @@
                 <div class="panel-heading">
                     最终写入数据库的数据 
                 </div>
-                <div class="panel-body pb_bottom" id="res"></div>
+                <div class="panel-body pb_bottom" id="pb_res"></div>
             </div>
         </div>
     </div>
 
     <script>
-        // $("#sl1").append("<p class='c_green'>aaa</p>")
-        // $("#sl1").append("<p>bbb</p>")
+
+
+        var spider_node = {
+            "ms": "127.0.0.1:32222",
+            "res": "127.0.0.1:32222",
+            "s1": "127.0.0.1:32222",
+            "s2": "127.0.0.1:32222",
+        }
+
+        var loop_statu = {
+            "ms": false,
+            "res": false,
+            "s1": false,
+            "s2": false,
+        }
+
+        //设置各节点的颜色样式
+        var color_dict = {
+            "ms": "c_",
+            "res": "c_",
+            "s1": "c_blue",
+            "s2": "c_pink",
+        }
+
+        //开启一个节点
+        function start_node(node_name){
+            $.get("http://"+ spider_node[node_name] + "/start/" + node_name);
+            
+            //如果节点已经是启动状态，则不处理，防止重复开启轮询任务造成浏览器崩溃
+            if (loop_statu[node_name] == false) setTimeout("update_print('"+node_name +"')", 1000);
+            loop_statu[node_name] = true;
+
+        }
+
+        //停止一个节点
+        function stop_node(node_name){
+            $.get("http://"+ spider_node[node_name] + "/stop/" + node_name);
+
+            //关闭自动刷新
+            loop_statu[node_name] = false;
+
+        }
         
-        function update_ms(){
-            $.get("http://127.0.0.1:32222/ms", function(data){
-                console.log(data);
-                if (data == "None"){
-                    return;
-                }
-                apd_html = "<p>"+ data + "</p>"
-                $("#ms").append(apd_html)
+        //访问节点接口得到消息
+        function update_print(node_name){
+            $.get("http://"+ spider_node[node_name] +"/data_pop/" + node_name, function(data){
+                
+                //将get接口得到的消息放在页面上
+                if (data == "None") return;
+                apd_html = "<p class='c_default'>"+ data + "</p>";
+                selecter = "#pb_"+node_name;
+                $(selecter).append(apd_html);
+
+                //滚动条滚到底部
+                $(selecter).scrollTop(2147483647);
+              
+                //将slave领取的电影id取出，使用其去匹配master的文本，改变master文本的颜色
+                if (node_name.replace("res","") != ""){ proc_color_done(data,node_name);}
+ 
+
             });
+            
+            //自动刷新
+            if (loop_statu[node_name]) setTimeout("update_print('"+node_name +"')", 1000);
+        }
+
+        //从master队列中用颜色标记已被领取的任务
+        function proc_color_done(arg_str,node_name){
+
+            //构建正则表达式，找到电影id
+            re =new RegExp("务：[0-9]+");
+            find_strs = re.exec(arg_str);
+            if (find_strs == null) return;
+            film_id = find_strs[0].replace("务：","");
+
+            //从pd_ms中寻找这个电影id，更换其颜色
+            //对于查找master中的元素，不适合直接用正则表达式替换，这样子容易出问题，性能也会很差
+            flag = true
+            chi = $("#pb_ms").children(".c_default")
+            for (var c = 0; c< chi.length; c++){
+                cc = $(chi[c])
+                if (cc.html() == film_id){
+                    cc.removeClass("c_default");
+                    cc.addClass(color_dict[node_name]);
+                    flag = false;
+                }
+
+            }
+            
+            //如果数据不同步，那么则不断尝试，一般在下一趟循环就可以得到解决
+            if (flag) setTimeout("proc_color_done('" + arg_str + "','" + node_name +"')",2000);
             
         }
 
-        function update_s1(){
-            $.get("http://127.0.0.1:32222/s1", function(data){
-                console.log(data);
-                if (data == "None"){
-                    return;
-                }
-                apd_html = "<p>"+ data + "</p>"
-                $("#s1").append(apd_html)
-            });
-            
+
+        //新载入网页时进行的操作
+        function init_onload(){
+
+            //清空所有redis队列
+            $.get("http://"+ spider_node["ms"] + "/clear");
+
+            //初始化后端，停止所有节点线程
+            for (var key in spider_node) stop_node(key);
+
+            //开启对res队列的轮询，此处不由按钮开关控制，默认开启，
+            //注意，res节点不需要执行start操作，因为不需要启动线程，直接轮询读取就好了
+            loop_statu["res"] = true;
+            setTimeout("update_print('res')", 1000);
         }
 
-        function update_s2(){
-            $.get("http://127.0.0.1:32222/s2", function(data){
-                console.log(data);
-                if (data == "None"){
-                    return;
-                }
-                apd_html = "<p>"+ data + "</p>"
-                $("#s2").append(apd_html)
-            });
-            
-        }
-
-        function update_res(){
-            $.get("http://127.0.0.1:32222/res", function(data){
-                console.log(data);
-                if (data == "None"){
-                    return;
-                }
-                apd_html = "<p>"+ data + "</p>"
-                $("#res").append(apd_html)
-            });
-            
-        }
-        //重复刷新
-        setInterval(update_ms, 100);
-        setInterval(update_s1, 100);
-        setInterval(update_s2, 100);
-        setInterval(update_res, 100);
-
+        //初始化前端后端
+        init_onload();
 
     </script>
 </body>

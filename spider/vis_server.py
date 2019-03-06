@@ -11,6 +11,10 @@ import ctypes
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
 
+# 程序本身的设定设定
+# 请确定master节点、slave1节点、slave2节点不可开在同一个服务器的相同端口上，最好分开在不同主机上运行
+# 否则爬虫可视化网页可能会出现问题
+
 
 def _async_raise(tid, exctype):
     """raises the exception, performs cleanup if needed"""
@@ -19,13 +23,9 @@ def _async_raise(tid, exctype):
         exctype = type(exctype)
     res_ = ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, ctypes.py_object(exctype))
     if res_ == 0:
-        # raise ValueError("invalid thread id")
         pass
     elif res_ != 1:
-        # """if it returns a number greater than one, you're in trouble,
-        # and you should call it again with exc=NULL to revert the effect"""
         ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, None)
-        # raise SystemError("PyThreadState_SetAsyncExc failed")
         pass
 
 
@@ -33,93 +33,73 @@ def stop_thread(thread):
     _async_raise(thread.ident, SystemExit)
 
 
-def test():
-    while True:
-        print('-------')
-        time.sleep(0.5)
+# 堵塞式操作单独开启线程，不影响web响应
+def start_(node_name):
 
-
-def my_start():
-    get_film_id.get_film_id()
-
-
-@app.route('/')
-def index():
-    response = make_response("hello world")
-    return response
-
-
-@app.route('/ms', methods=['GET'])
-def ms():
-
-    response = make_response(str(redis.lpop("ms")))
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
-
-
-@app.route('/s1', methods=['GET'])
-def s1():
-    response = make_response(str(redis.lpop("s1")))
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
-
-
-@app.route('/s2', methods=['GET'])
-def s2():
-    response = make_response(str(redis.lpop("s2")))
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
-
-
-@app.route('/res', methods=['GET'])
-def res():
-    response = make_response(str(redis.lpop("res")))
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
-
-
-@app.route('/start', methods=['GET'])
-def start():
     global threads
+
     # 开启线程，将线程id存入数据库中
+    if node_name == "ms":
+        # mster节点功能特殊，进行单独的逻辑处理
+        while redis.lpop("ms") is not None:
+            pass                # 清理输出
+        t1 = threading.Thread(target=get_film_id.get_film_id)
+        threads.append(t1)
+        t1.start()
+    else:
+        # slave节点，多个节点可以重复使用该代码
+        while redis.lpop(node_name) is not None:
+            pass
+        t2 = threading.Thread(target=get_all_info.start, args=(node_name,))
+        threads.append(t2)
+        t2.start()
 
-    # 先清理一遍输出
-    while redis.lpop("ms") is not None:
+
+def stop_(node_name):
+
+    global threads
+
+    # 从redis中读取线程id，全部关掉
+    for t in threads:
+        stop_thread(t)
+    while redis.lpop(node_name) is not None:
         pass
-    while redis.lpop("s1") is not None:
-        pass
-    while redis.lpop("s2") is not None:
-        pass
-    while redis.lpop("res") is not None:
-        pass
 
-    # mster
-    t1 = threading.Thread(target=get_film_id.get_film_id)
-    threads.append(t1)
-    t1.start()
 
-    # slave1
-    t2 = threading.Thread(target=get_all_info.start, args=("s1",))
-    threads.append(t2)
-    t2.start()
+# 清空redis
+def clear_():
+    for k in redis.keys():
+        while redis.lpop(k) is not None:
+            pass
 
-    # slave2
-    t3 = threading.Thread(target=get_all_info.start, args=("s2",))
-    threads.append(t3)
-    t3.start()
 
+@app.route('/data_pop/<key>')
+def data_pop(key):
+    # 这里key的取值范围有 ms s1 s2 res 等，分别存储各节点的输出信息，这些变量名也可以认为是节点名字
+    response = make_response(str(redis.lpop(key)))
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
+
+@app.route('/start/<node_name>')
+def start(node_name):
+    threading.Thread(target=start_, args=(node_name,)).start()
     response = make_response("")
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
 
-@app.route('/stop', methods=['GET'])
-def stop():
-    global threads
-    # 从redis中读取线程id，全部关掉
-    for t in threads:
-        stop_thread(t)
+@app.route('/stop/<node_name>')
+def stop(node_name):
+    threading.Thread(target=stop_, args=(node_name,)).start()
+    response = make_response("")
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
+
+@app.route('/clear')
+def clear():
+    threading.Thread(target=clear_).start()
     response = make_response("")
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
@@ -130,6 +110,5 @@ if __name__ == '__main__':
     threads = []
 
     redis = Redis.from_url("redis://:fxb_fh@120.24.1.93:6379", decode_responses=True)
-    # start()
-    # 开始监听
+
     app.run(host='0.0.0.0', port=32222)
