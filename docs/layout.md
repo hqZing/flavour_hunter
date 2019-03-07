@@ -4,7 +4,8 @@ index.html | 主要展现票房的整体情况和数据情况
 右1| [未编号 各地区票房占比（求总数）饼图](https://echarts.baidu.com/examples/editor.html?c=pie-legend)
 右2| [未编号 各地区票房数字（求总数）柱图](https://echarts.baidu.com/examples/editor.html?c=bar-simple)
 左1|词云（lisijia）
-左2|采集的总票房数，等采集概况？（因为数据比较少，不知道这里是不是要遮掩一一下）
+左2|采集的总票房数，等采集概况？（因为数据比较少，不知道这里是不是要遮掩一一下
+或把首页两个小图合并一下，展示“统计数据的电影之最”
 
 
 如果有时间可以再把比例调整的灵活一点
