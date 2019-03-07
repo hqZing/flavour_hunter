@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import os
 import xml.dom.minidom as xmldom
 from fontTools.ttLib import TTFont
@@ -9,14 +8,10 @@ from bs4 import BeautifulSoup
 import requests
 import re
 import hashlib
-from hbase.ttypes import Mutation
-from thrift.transport import TSocket, TTransport
-from thrift.protocol import TBinaryProtocol
-from hbase import Hbase
 from redis import Redis
 import time
 
-# 注意，在不同的场合下运行，有2处地方需要修改参数，第一处是节点名字，第二处是Hbase的ip
+# 爬虫页专用，不会真正写入Hbase
 
 
 def to_md5(arg_str):
@@ -419,30 +414,9 @@ def get_film_info(film_id):
 
 
 # 录入数据库
-def write_to_hbase(result):
+def write_to_hbase(result, client):
 
-    socket = TSocket.TSocket('192.168.1.105', 9090)
-
-    # 部署环境下使用这个参数
-    # socket = TSocket.TSocket('127.0.0.1', 9090)
-
-    socket.setTimeout(5000)
-    transport = TTransport.TBufferedTransport(socket)
-    protocol = TBinaryProtocol.TBinaryProtocol(transport)
-    client = Hbase.Client(protocol)
-    socket.open()
-
-    # 将这大量字段添加进去
-    mutations = [Mutation(column=("f:"+x).encode('utf-8'), value=to_byte(result[x])) for x in result.keys()]
-
-    # 获得行键
-    row_key = to_md5(result["n"]).encode('utf-8')
-
-    # 写入
-    client.mutateRow("film22".encode('utf-8'), row_key, mutations, None)
-
-    print(result)
-    print("录入完成")
+    pass
 
 
 # 程序的主要入口
@@ -450,6 +424,16 @@ def start(node_name):
 
     # 连接redis
     redis = Redis.from_url("redis://:fxb_fh@120.24.1.93:6379", decode_responses=True)
+
+    # 在不同服务器运行的时候更改一下这个节点名字，用来区分不同的爬虫从机
+    # 从机1设置为s1，从机2设置为s2
+    # node_name = "s1"
+
+    # 依旧要先清空redis的队列
+    while redis.lpop(node_name) is not None:
+        pass
+    while redis.lpop("res") is not None:
+        pass
 
     # 从redis中领取爬虫任务
     while 1:
@@ -460,6 +444,9 @@ def start(node_name):
         if f_id is None:
             continue
         print(node_name, "领取到一个任务")
+
+        # 若领取了任务，则更新到爬虫页中
+        redis.lpush(node_name, node_name + " 领取到一个任务：" + f_id)
 
         # 领取到任务,拿去处理
         dict_users_portrait = get_users_portrait(f_id)
@@ -473,9 +460,11 @@ def start(node_name):
             result.update(dict_film_info)
 
             # 输出到redis，以代替写入hbase
-            write_to_hbase(result)
+            print(result)
+            redis.lpush(node_name, "经过清洗判断，%s数据合格，录入Hbase中，电影名为：%s" % (f_id, result["n"]))
+            redis.lpush("res", str(dict_film_info))
         else:
-            pass
+            redis.lpush(node_name, "经过清洗判断，%s数据不合格，放弃录入" % f_id)
 
 
 if __name__ == '__main__':

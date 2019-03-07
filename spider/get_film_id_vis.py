@@ -13,7 +13,10 @@ def get_film_id():
     # redis.sadd("film_id", "6379")
     # print(redis.spop("film_id"))
     # 清空这两个列表
-    while redis.lpop("film_id") is not None:
+    while redis.lpop("film_id_vis") is not None:
+        pass
+
+    while redis.lpop("ms") is not None:
         pass
 
     for year_id in [11, 12, 13, 14, 100]:
@@ -27,9 +30,13 @@ def get_film_id():
                 f_id = a['data-val'].replace("{movieId:", "").replace("}", "")
 
                 # 放入一份到任务队列
-                redis.lpush("film_id", f_id)
+                redis.lpush("film_id_vis", f_id)
+
+                # 同时复制一份到ms队列用以爬虫页面展示
+                redis.lpush("ms", f_id)
 
                 print(f_id)
+                # time.sleep(2)
 
     print("所有任务添加完成")
 

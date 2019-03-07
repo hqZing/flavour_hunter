@@ -1,8 +1,8 @@
 from flask import *
 from flask_cors import *
 from redis import Redis
-import get_film_id
-import get_all_info
+import get_film_id_vis
+import get_all_info_vis
 import threading
 import time
 import inspect
@@ -43,14 +43,14 @@ def start_(node_name):
         # mster节点功能特殊，进行单独的逻辑处理
         while redis.lpop("ms") is not None:
             pass                # 清理输出
-        t1 = threading.Thread(target=get_film_id.get_film_id)
+        t1 = threading.Thread(target=get_film_id_vis.get_film_id)
         threads.append(t1)
         t1.start()
     else:
         # slave节点，多个节点可以重复使用该代码
         while redis.lpop(node_name) is not None:
             pass
-        t2 = threading.Thread(target=get_all_info.start, args=(node_name,))
+        t2 = threading.Thread(target=get_all_info_vis.start, args=(node_name,))
         threads.append(t2)
         t2.start()
 
