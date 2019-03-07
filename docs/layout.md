@@ -21,8 +21,8 @@ trend.html | 与用户画像和票房有关的情况
 quota.html | 与类别有关的
 ---|---
 第一行第一个|未编号 直接展示最受欢迎的电影类别
-第一行第二个（中间大图）|图9 三维电影票房与类型的关系
-第一行第三个|图4 男女与类别关系
-第二行第一个|图5 年龄与类别关系
-第二行第二个（中间大图）|图6 年份、类别与票房的关系
-第二行第三个|图7 学历与类型关系
+第一行第二个（中间大图）|[图9 三维电影票房与类型的关系](https://echarts.baidu.com/examples/editor.html?c=bar3d-dataset&gl=1)
+第一行第三个|[图4 男女与类别关系](https://echarts.baidu.com/examples/editor.html?c=funnel-align)
+第二行第一个|[图5 年龄与类别关系](https://echarts.baidu.com/examples/editor.html?c=bar-brush)
+第二行第二个（中间大图）|[图6 年份、类别与票房的关系](https://echarts.baidu.com/examples/editor.html?c=dataset-link)
+第二行第三个|[图7 学历与类型关系](https://echarts.baidu.com/examples/editor.html?c=bar-polar-stack)
