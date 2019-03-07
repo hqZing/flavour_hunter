@@ -122,13 +122,13 @@ flavour_hunter
 
 | 主机名 | slave1.hd | master.hd | slave2.hd |
 | ------- | ----------- | ----------- |---------- |
-| 公网IP | 114.115.169.217 | 114.116.5.101 |
-| 内网IP | 172.16.0.22 | 192.168.10.156 |
+| 公网IP | 114.115.169.217 | 114.116.5.101 |114.115.131.49 |
+| 内网IP | 172.16.0.22 | 192.168.10.156 |192.168.8.15|
 | 用户名 | root | root | root |
-| 登陆密码 | hoc-Swift-Cask-Deep | NT4bDKPVg |
-| 学生机拥有者 | 黄琦 | 严东阳 |
-| 控制台账号 | 18677681204 | hahaha1235 |
-| 控制台密码 | xgsn1D++ | NT4bDKPVgHQIxpEK |
+| 登陆密码 | hoc-Swift-Cask-Deep | NT4bDKPVg |passive_fight_agency_Achy|
+| 学生机拥有者 | 黄琦 | 严东阳 | |
+| 控制台账号 | 18677681204 | hahaha1235 | adsfas|
+| 控制台密码 | xgsn1D++ | NT4bDKPVgHQIxpEK |NTwN3NuBFsKRS6P|
 
 ## 6. 网上可用的参考资料
 
