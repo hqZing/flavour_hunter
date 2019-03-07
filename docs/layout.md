@@ -17,3 +17,12 @@ trend.html | 与用户画像和票房有关的情况
 右上| [图3 女性观影人群比例的逐年变化](https://echarts.baidu.com/examples/editor.html?c=pictorialBar-body-fill)
 左下|[图1 用户画像中的地区比例](https://echarts.baidu.com/examples/editor.html?c=radar2)
 右下|未编号 学历占比与数目图 [饼图](https://echarts.baidu.com/examples/editor.html?c=pie-legend) [柱图](https://echarts.baidu.com/examples/editor.html?c=bar-simple)
+
+quota.html | 与类别有关的
+---|---
+第一行第一个|未编号 直接展示最受欢迎的电影类别
+第一行第二个（中间大图）|图9 三维电影票房与类型的关系
+第一行第三个|图4 男女与类别关系
+第二行第一个|图5 年龄与类别关系
+第二行第二个（中间大图）|图6 年份、类别与票房的关系
+第二行第三个|图7 学历与类型关系
