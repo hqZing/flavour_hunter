@@ -2,90 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05a28c87-49b5-483e-8feb-39c067300da8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/chartBack.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/find.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/info_9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/logoBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/nav_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/nav_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/nav_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/images/title_9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/NCDindex.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/bmap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/echarts-gl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/echarts.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/jquery-3.3.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/jquery.pagination.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/jquery.slimscroll.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/laydate/laydate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/laydate/theme/default/font/iconfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/laydate/theme/default/font/iconfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/laydate/theme/default/font/iconfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/laydate/theme/default/font/iconfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/Plugin/laydate/theme/default/laydate.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/chronic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/common.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/quota.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/scripts/trend.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/styles/bootstrap-table.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/styles/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/styles/common.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/styles/pagination.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/NCDindex.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/chronic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/quota.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/scatter-life-expectancy-timeline.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/table10.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/table8.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/nginx-1.14.2/html/index_fe/views/trend.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyze/table10.py" afterPath="$PROJECT_DIR$/analyze/table10.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/.ipynb_checkpoints/create_table_8-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/.ipynb_checkpoints/data_prep-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/.ipynb_checkpoints/终端执行代码-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/MySQL_prep.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_6.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_7.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_8.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_9_2016_shu.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_9_2016he.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_9_2017_shu.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_9_2017he.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_9_2018_shu.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/create_table_9_2018he.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/data_prep.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/flavour_hunter" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/my22.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyze/终端执行代码.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/finaldoc.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/layout.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/lxy_help.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/szy_help.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/参考资源与可爬取网站整合（各种链接）.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/可视化需求分析.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/字段.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/本项目虚拟机使用指南.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/需求分析.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/项目策划电影篇.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spider/get_all_info_vis.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spider/get_film_id_vis.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spider/vis_server.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -99,7 +50,7 @@
       <file leaf-file-name="table8.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyze/table8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1311">
+            <state relative-caret-position="0">
               <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -108,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sp.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/sp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="444" column="38" lean-forward="true" selection-start-line="444" selection-start-column="38" selection-end-line="444" selection-end-column="38" />
+            <state relative-caret-position="375">
+              <caret line="447" column="30" lean-forward="false" selection-start-line="447" selection-start-column="30" selection-end-line="447" selection-end-column="30" />
               <folding>
                 <element signature="e#622#996#0" expanded="false" />
                 <element signature="e#1030#1320#0" expanded="false" />
@@ -127,11 +78,47 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="get_all_info_vis.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/get_all_info_vis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_film_id_vis.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/get_film_id_vis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vis_server.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/vis_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="get_film_id.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/get_film_id.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="22" column="93" lean-forward="true" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+              <caret line="22" column="93" lean-forward="false" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -140,8 +127,8 @@
       <file leaf-file-name="table10.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/analyze/table10.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="59" column="17" lean-forward="true" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+            <state relative-caret-position="1311">
+              <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -179,12 +166,13 @@
         <option value="$PROJECT_DIR$/spider/sp.py" />
         <option value="$PROJECT_DIR$/analyze/table8.py" />
         <option value="$PROJECT_DIR$/analyze/table10.py" />
+        <option value="$PROJECT_DIR$/analyze/table9_2016暑期档.py" />
+        <option value="$PROJECT_DIR$/analyze/table6.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-181" />
-    <option name="y" value="66" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
     <option name="width" value="1680" />
     <option name="height" value="1038" />
   </component>
@@ -204,7 +192,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -225,12 +212,18 @@
             <path>
               <item name="flavour_hunter" type="b2602c69:ProjectViewProjectNode" />
               <item name="flavour_hunter" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flavour_hunter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flavour_hunter" type="462c0819:PsiDirectoryNode" />
               <item name="spider" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,19 +370,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-181" y="66" width="1680" height="1038" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="0" width="1680" height="1038" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18929017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19240348" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2972665" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2972665" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39983845" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39983845" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -410,41 +402,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/bs4/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31671">
-          <caret line="1377" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1621" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/生成建表语句.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/site-packages/bs4/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31671">
-          <caret line="1377" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1621" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyze/readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/analyze/生成建表语句.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -669,7 +626,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyze/table8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
+        <state relative-caret-position="0">
           <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -679,8 +636,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/analyze/table10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="59" column="17" lean-forward="true" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+        <state relative-caret-position="1311">
+          <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -690,15 +647,31 @@
     <entry file="file://$PROJECT_DIR$/spider/get_film_id.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="22" column="93" lean-forward="true" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+          <caret line="22" column="93" lean-forward="false" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/table9_2016暑期档.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7176">
+          <caret line="313" column="0" lean-forward="true" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyze/table6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="334" column="4" lean-forward="false" selection-start-line="334" selection-start-column="4" selection-end-line="334" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spider/sp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="444" column="38" lean-forward="true" selection-start-line="444" selection-start-column="38" selection-end-line="444" selection-end-column="38" />
+        <state relative-caret-position="375">
+          <caret line="447" column="30" lean-forward="false" selection-start-line="447" selection-start-column="30" selection-end-line="447" selection-end-column="30" />
           <folding>
             <element signature="e#622#996#0" expanded="false" />
             <element signature="e#1030#1320#0" expanded="false" />
@@ -708,6 +681,36 @@
             <element signature="e#12637#12801#0" expanded="false" />
             <element signature="e#12850#13521#0" expanded="false" />
             <element signature="e#13565#14151#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/get_all_info_vis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/get_film_id_vis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vis_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
