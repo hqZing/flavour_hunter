@@ -67,6 +67,7 @@ for jd in jd_list:
         sql = sql + "FROM film44 t WHERE t.%s=1 " % v_gj
         sql = sql + "and mdate <= \'%s\'and mdate >=\'%s\'" % (jd[1], jd[2])
 
+
         r = exec_sql(sql)
         print(sql)
         if r is not None:

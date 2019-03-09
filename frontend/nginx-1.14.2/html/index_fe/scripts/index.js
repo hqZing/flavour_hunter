@@ -451,8 +451,8 @@ function draw_pie(raw_data){
     
         visualMap: {
             show: false,
-            min: 80,
-            max: 600,
+            min: 3840,
+            max: 9407073,
             inRange: {
                 colorLightness: [0, 1]
             }
