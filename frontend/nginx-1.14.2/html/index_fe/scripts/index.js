@@ -81,7 +81,7 @@ option = null;
 
 myChart.showLoading();
 
-$.get('./life-expectancy.json', function (data) {
+$.get('./table8.json', function (data) {
     myChart.hideLoading();
 
     var itemStyle = {
@@ -100,9 +100,9 @@ $.get('./life-expectancy.json', function (data) {
     };
     // Schema:
     var schema = [
-        {name: 'Income', index: 0, text: '人均收入', unit: '美元'},
-        {name: 'LifeExpectancy', index: 1, text: '人均寿命', unit: '岁'},
-        {name: 'Population', index: 2, text: '总人口', unit: ''},
+        {name: 'BoxOffice', index: 0, text: '总票房', unit: '万元'},
+        {name: 'FilmNum', index: 1, text: '电影数目', unit: '部'},
+        {name: 'MaxBox', index: 2, text: '最高票房', unit: '万元'},
         {name: 'Country', index: 3, text: '国家', unit: ''}
     ];
 
@@ -162,11 +162,11 @@ $.get('./life-expectancy.json', function (data) {
                 left: '63%',
                 top: '55%',
                 textStyle: {
-                    fontSize: 100,
+                    fontSize: 48,
                     color: 'rgba(255, 255, 255, 0.7)'
                 }
             }, {
-                text: '各国人均寿命与GDP关系演变',
+                text: '各地区票房总览',
                 left: 'center',
                 top: 10,
                 textStyle: {
@@ -196,10 +196,10 @@ $.get('./life-expectancy.json', function (data) {
             },
             xAxis: {
                 type: 'log',
-                name: '人均收入',
-                max: 100000,
-                min: 300,
-                nameGap: 25,
+                name: '总票房',
+                max: 9407073,
+                min: 0,
+                nameGap: 10000,
                 nameLocation: 'middle',
                 nameTextStyle: {
                     fontSize: 18
@@ -213,12 +213,12 @@ $.get('./life-expectancy.json', function (data) {
                     }
                 },
                 axisLabel: {
-                    formatter: '{value} $'
+                    formatter: '{value} 万元'
                 }
             },
             yAxis: {
                 type: 'value',
-                name: '平均寿命',
+                name: '电影数目',
                 max: 100,
                 nameTextStyle: {
                     color: '#ccc',
@@ -233,7 +233,7 @@ $.get('./life-expectancy.json', function (data) {
                     show: false
                 },
                 axisLabel: {
-                    formatter: '{value} 岁'
+                    formatter: '{value} 部'
                 }
             },
             visualMap: [
@@ -418,79 +418,90 @@ if (option && typeof option === "object") {
   //   });
   //-----------------------notable10 start----------------------
 
-var lineChart = echarts.init(document.getElementById('notable10'));
-lineChart.setOption({
-    backgroundColor: '#2c343c',
 
-    title: {
-        text: 'Customized Pie',
-        left: 'center',
-        top: 20,
-        textStyle: {
-            color: '#ccc'
-        }
-    },
 
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-    },
+dd22 = 0
+$.get('./table10.json', function (data) {draw_pie(data);});
 
-    visualMap: {
-        show: false,
-        min: 80,
-        max: 600,
-        inRange: {
-            colorLightness: [0, 1]
-        }
-    },
-    series : [
-        {
-            name:'访问来源',
-            type:'pie',
-            radius : '55%',
-            center: ['50%', '50%'],
-            data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:274, name:'联盟广告'},
-                {value:235, name:'视频广告'},
-                {value:400, name:'搜索引擎'}
-            ].sort(function (a, b) { return a.value - b.value; }),
-            roseType: 'radius',
-            label: {
-                normal: {
-                    textStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    }
-                }
-            },
-            labelLine: {
-                normal: {
-                    lineStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    },
-                    smooth: 0.2,
-                    length: 10,
-                    length2: 20
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: '#c23531',
-                    shadowBlur: 200,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            },
+//国家地区的电影票房占比, 绘制这个饼状图
+function draw_pie(raw_data){
 
-            animationType: 'scale',
-            animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
-                return Math.random() * 200;
+    var lineChart = echarts.init(document.getElementById('notable10'));
+
+    console.log(dd22)
+
+    raw_data = eval(raw_data);
+
+    lineChart.setOption({
+        backgroundColor: '#2c343c',
+    
+        // title: {
+        //     text: 'Customized Pie',
+        //     left: 'center',
+        //     top: 20,
+        //     textStyle: {
+        //         color: '#ccc'
+        //     }
+        // },
+    
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+    
+        visualMap: {
+            show: false,
+            min: 80,
+            max: 600,
+            inRange: {
+                colorLightness: [0, 1]
             }
-        }
-    ]
-});
+        },
+        series : [
+            {
+                name:'票房总数及占比',
+                type:'pie',
+                radius : '55%',
+                center: ['50%', '50%'],
+                //传入一个数组，数组里面是二元的键值对
+
+                data: raw_data.sort(function (a, b) { return a.value - b.value; }),
+                roseType: 'radius',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#c23531',
+                        shadowBlur: 200,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+    
+                animationType: 'scale',
+                animationEasing: 'elasticOut',
+                animationDelay: function (idx) {
+                    return Math.random() * 200;
+                }
+            }
+        ]
+    });
+   
+}
 
 //------------------------------notalbe10end------------------------------------
 

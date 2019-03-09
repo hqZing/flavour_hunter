@@ -7,10 +7,24 @@
     <script src="../scripts/Plugin/jquery-3.3.1.min.js"></script>
     <script src="../scripts/Plugin/echarts.min.js"></script>
     <script src="../scripts/Plugin/bmap.min.js"></script>
-    <script src="http://api.map.baidu.com/api?v=2.0&ak=LelFSt6BfykGf8m3PB5zr8LaXAG2cMg6"></script>
+    <!-- <script src="http://api.map.baidu.com/api?v=2.0&ak=LelFSt6BfykGf8m3PB5zr8LaXAG2cMg6"></script> -->
     <script src="../scripts/common.js"></script>
     <script src="../scripts/index.js"></script>
     <script src="../scripts/Plugin/laydate/laydate.js"></script>
+
+    <!--贴过来的一大堆-->
+    <!-- <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script> -->
+   
+    <!--script src="echarts-wordcloud.min.js"--><!--/script-->
+
 </head>
 <body>
 <!--顶部-->
@@ -93,33 +107,34 @@
     <div class="div_any">
         <div class="left div_any01">
             <div class="div_any_child">
-                <div class="div_any_title"><img src="../images/title_1.png">各医院采集数据量</div>
+                <div class="div_any_title"><img src="../images/title_1.png">展示文字内容或词云</div>
                 <p id="pieChart1" class="p_chart"></p>
             </div>
             <div class="div_any_child">
-                <div class="div_any_title"><img src="../images/title_2.png">各医院门诊住院费用</div>
+                <div class="div_any_title"><img src="../images/title_2.png">展示文字内容或词云</div>
                 <p id="histogramChart" class="p_chart"></p>
             </div>
         </div>
         <div class="div_any02 left ">
             <div class="div_any_child div_height">
-                <div class="div_any_title any_title_width"><img src="../images/title_0.png">厦门市地图 </div>
-                <div id="mapChart" style="width:97.5%;height:95%;display: inline-block;padding-left: 1.25%;padding-top:2.2%"></div>
+                <div class="div_any_title any_title_width"><img src="../images/title_0.png">各地区票房总览 </div>
+                <div id="table8" style="width:97.5%;height:95%;display: inline-block;padding-left: 1.25%;padding-top:2.2%"></div>
             </div>
         </div>
         <div class="right div_any01">
             <div class="div_any_child">
-                <div class="div_any_title"><img src="../images/title_3.png">数据采集条数(当日)</div>
-                <p id="lineChart" class="p_chart"></p>
+                <div class="div_any_title"><img src="../images/title_3.png">各地区票房占比</div>
+                <p id="notable10" class="p_chart"></p>
             </div>
             <div class="div_any_child">
-                <div class="div_any_title"><img src="../images/title_4.png">就诊人数(当日)</div>
-                <p id="lineChart2" class="p_chart"></p>
+                <div class="div_any_title"><img src="../images/title_4.png">各地区票房总数</div>
+                <p id="notable11" class="p_chart"></p>
             </div>
         </div>
     </div>
-
-    <div id="el-dialog" class="">
+    
+    <!-- 以下为弹窗 -->
+    <!-- <div id="el-dialog" class="">
         <div class="xc_layer"></div>
         <div class="popBox" id="printView">
             <div class="ttBox"><span class="tt" id="reportTitle">第一医院</span><img src="../images/close.png" style="width: 30px;float: right;cursor: pointer;" title="关闭弹窗" class="close"/></div>
@@ -149,7 +164,7 @@
              </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </div>
 </body>
